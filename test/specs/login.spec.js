@@ -1,5 +1,5 @@
 const LoginPage = require('../pageobjects/LoginPage');
-// meerim12qw!@QW
+
 describe('Login page on Navigator CRM', () => {
     beforeEach('Setup browser', async() =>{
         await LoginPage.open();
