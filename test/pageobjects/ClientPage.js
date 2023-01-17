@@ -27,6 +27,18 @@ class ClientPage {
     
     
     get openSearch() { return $('form.search-form')}
+    get ageSelect() { return $('app-client-age-filter div.age')}
+    get genderSelect() { return $('app-client-sex-filter div.gender')}
+
+    //#region 
+    get ageAllOption() {return $('app-client-age-filter div[class="option-wrap"] div:first-child')}
+    get age18To23Option() {return $('app-client-age-filter div[class="option-wrap"] div:first-child')}
+    get age24To31Option() {return $('app-client-age-filter div[class="option-wrap"] div:first-child')}
+
+    //#endregion
+
+
+
 
     // тут все для редактирования селекторы
     get openFirstClientDetails() { return $('table.crm-navigator-table tbody tr')}

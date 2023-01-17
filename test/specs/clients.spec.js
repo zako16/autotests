@@ -37,4 +37,13 @@ describe('Clients test', () => {
         await ClientPage.fillForm(testingUser)
     })
 
+    it('should Edit Client', async ()=> {
+        await ClientPage.createClientButton.waitForDisplayed({ timeout: 10000 });
+        await ClientPage.openFirstClientDetails.click();
+        await ClientPage.editModalPage.waitForDisplayed({ timeout: 10000 });
+        await ClientPage.editSurnameField.clearValue();
+        await ClientPage.editSurnameField.setValue('NEW SRUNAME')
+        await browser.pause(10000);
+    })
+
 })
