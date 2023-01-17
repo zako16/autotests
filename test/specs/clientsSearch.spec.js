@@ -1,7 +1,6 @@
 const LoginPage = require('../pageobjects/LoginPage')
 const ClientPage = require('../pageobjects/ClientPage')
 
-// import myJson from '../../testData.json'
 
 describe('Clients test', () => {
     beforeEach( async() => {
@@ -20,7 +19,4 @@ describe('Clients test', () => {
         await ClientPage.editSurnameField.setValue('NEW SRUNAME')
         await browser.pause(10000);
     })
-
-
-
 })
