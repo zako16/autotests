@@ -12,10 +12,6 @@ describe('Clients test', () => {
     })
 
     it('should create new client', async ()=> {
-        // уже тут шаги открытия формы клиента и заполнения 
-       // первый способ
-        // await browser.pause(5000);
-        // implicit , explicit
         await ClientPage.createClientButton.waitForDisplayed({ timeout: 10000 });
         await ClientPage.createClientButton.click();
         await ClientPage.surnameField.setValue("Тестовая фамилия")
@@ -29,18 +25,17 @@ describe('Clients test', () => {
         await ClientPage.fillChild();
         await ClientPage.saveButton.click();
         await browser.acceptAlert();
-
-
-        //  второй способ
-        // let testingUser = {
-        //     surname: "Тестовая фамилия"
-        // }
-        // await ClientPage.fillForm(testingUser)
-        // окончание второго способ
     })
 
-    xit('remain test cases', async () => {
-
+    it('second variant', async () => {
+        let testingUser = {
+            surname: "Тестовая фамилия",
+            name: "Имя",
+            middleName: "Отчество",
+            email: "bellatrix.black.tester07@gmail.com",
+            birthdate: "05/06/2000"
+        }
+        await ClientPage.fillForm(testingUser)
     })
 
 })

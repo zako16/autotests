@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@wdio/cli": "^8.0.15",
     "@wdio/local-runner": "^8.0.13",
     "@wdio/mocha-framework": "^8.0.13",
@@ -15,7 +16,8 @@
     "wdio": "wdio run wdio.conf.js",
     "test": ".\\node_modules\\.bin\\wdio .\\wdio.conf.js",
     "login": ".\\node_modules\\.bin\\wdio .\\wdio.conf.js --spec .\\test\\specs\\login.spec.js",
-    "clients": ".\\node_modules\\.bin\\wdio .\\wdio.conf.js --spec .\\test\\specs\\clients.spec.js",
+    "clients": ".\\node_modules\\.bin\\wdio .\\wdio.conf.js --spec .\\test\\specs\\clientsSearch.spec.js",
+    "legals": ".\\node_modules\\.bin\\wdio .\\wdio.conf.js --spec .\\test\\specs\\legals.spec.js",
     "macOSVersion": "./node_modules/.bin/wdio ./wdio.conf.js"
   }
 }

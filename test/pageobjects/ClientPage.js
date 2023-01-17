@@ -23,11 +23,15 @@ class ClientPage {
     get childGenderSelect() { return this.childEnterRow.$('mat-select')}
     get childGenderSelectOption() { return $('//mat-option/span[contains(text(),"М")]')}
     get addChild() { return this.childsModalPage.$('//mat-dialog-actions/button[contains(text(),"Сохранить")]')}
+    
+    
+    
+    get openSearch() { return $('form.search-form')}
 
-    // второй способ
-    async fillForm(testingUser){
-        await this.surnameField.setValue(testingUser.surname)
-    }
+    // тут все для редактирования селекторы
+    get openFirstClientDetails() { return $('table.crm-navigator-table tbody tr')}
+    get editModalPage() { return $('div[class="modal-window user"]')}
+    get editSurnameField() { return this.editModalPage.$('input[placeholder="Фамилия"]')}
 
     async fillChild(childName="Phillip", birthdate="05/06/2000"){
         await this.openChildModalPageButton.click();
@@ -37,6 +41,17 @@ class ClientPage {
         await this.childGenderSelect.click();
         await this.childGenderSelectOption.click();
         await this.addChild.click();
+    }
+
+    // второй способ
+    async fillForm(testingUser){
+        await this.surnameField.setValue(testingUser.surname);
+        await this.firstnameField.setValue(testingUser.name);
+        await this.middleNameField.setValue(testingUser.middleName);
+        await this.emailField.setValue(testingUser.email);
+        await this.birthField.setValue(testingUser.birthdate);
+        await this.fillChild();
+        await this.saveButton.click();
     }
 
     async open(){
